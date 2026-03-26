@@ -53,7 +53,7 @@ ScrollReveal().reveal('.home-contant h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-contant p, .about-contant', { origin: 'right' });
 
 const typed = new Typed('.multiple-text', {
-  strings: ['Freelancer', 'Frontend Web Developer', 'WordPress Developer'],
+  strings: ['Frontend Web Developer', 'WordPress Developer'],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
