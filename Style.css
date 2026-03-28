@@ -57,6 +57,7 @@ section {
 
 .logo {
   font-size: 2.5rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: var(--text-color);
   font-weight: 600;
   cursor: default;
@@ -64,7 +65,8 @@ section {
 }
 
 .navbar a {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: var(--text-color);
   margin-left: 4rem;
   transition: .3s;
@@ -113,13 +115,15 @@ section {
 .home-content h3 {
   font-size: 3.2rem;
   font-weight: 700;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 
 .home-content h1 {
-  font-size: 5.6rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 5.5rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .home-content h3:nth-of-type(2) {
@@ -128,10 +132,12 @@ section {
 
 span {
   color: var(--main-color);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .home-content p {
   font-size: 1.6rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 
@@ -156,6 +162,83 @@ span {
   background-color: var(--main-color);
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
+
+}
+
+
+.btn {
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #000000;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 124px;
+}
+
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  left: 0;
+  top: 0;
+  border-radius: 200px;
+}
+
+/* glow effect */
+.btn::before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000, #ff7300, #fffb00, #48ff00,
+      #00ffd5, #002bff, #ff00c8, #ff0000), #161616;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400%;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+
+}
+
+/* hover effect */
+.btn:hover::before {
+  opacity: 1;
+
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:active {
+  color: #000;
+  font-weight: bold;
+
 
 }
 
